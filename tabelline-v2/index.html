@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelline Interattive - Fattoria dei Numeri</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Schermata di Benvenuto -->
+        <section id="welcome-screen" class="screen">
+            <div class="game-background">
+                <div class="sky">
+                    <div class="animated-element sole">
+                        <div class="sun-rays"></div>
+                    </div>
+                    <div class="cloud-container">
+                        <div class="animated-element nuvola nuvola1"></div>
+                        <div class="animated-element nuvola nuvola2"></div>
+                        <div class="animated-element nuvola nuvola3"></div>
+                    </div>
+                </div>
+                <div class="welcome-content">
+                    <h1>Benvenuto alla Fattoria dei Numeri!</h1>
+                    <p>Impara le tabelline divertendoti</p>
+                    <button id="start-game" class="animated-button">Inizia a Giocare!</button>
+                </div>
+                <div class="animated-element casa">
+                    <div class="window-right"></div>
+                </div>
+                <div class="prato-container">
+                    <div class="prato-base"></div>
+                    <div class="fiori-container">
+                        <!-- I fiori verranno generati via CSS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modalità di Gioco -->
+        <section id="game-screen" class="screen hidden">
+            <div class="game-background">
+                <div class="sky">
+                    <div class="animated-element sole">
+                        <div class="sun-rays"></div>
+                    </div>
+                    <div class="cloud-container">
+                        <div class="animated-element nuvola nuvola1"></div>
+                        <div class="animated-element nuvola nuvola2"></div>
+                        <div class="animated-element nuvola nuvola3"></div>
+                    </div>
+                </div>
+                <div class="campo-verde">
+                    <div class="timer-container">
+                        Tempo rimasto: <span id="timer" class="timer">15</span> secondi
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progress" class="progress"></div>
+                    </div>
+                    <div id="question-area">
+                        <h2 id="question-text"></h2>
+                        <div id="answer-options" class="answer-options">
+                            <!-- Le opzioni verranno generate dinamicamente via JavaScript -->
+                        </div>
+                    </div>
+                    <div id="target-area">
+                        <div class="target-container">
+                            <p id="feedback-message" class="feedback-message">Tocca la risposta corretta!</p>
+                        </div>
+                    </div>
+                    <div id="score-area">
+                        <p>Tentativi totali: <span id="total-answers">0</span></p>
+                        <p>Risposte corrette: <span id="score">0</span> / <span id="max-correct">15</span></p>
+                    </div>
+                </div>
+                <div class="animated-element casa">
+                    <div class="window-right"></div>
+                </div>
+                <div class="prato-container">
+                    <div class="prato-base"></div>
+                    <div class="fiori-container">
+                        <!-- I fiori verranno generati via CSS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schermata di Fine Gioco -->
+        <section id="end-screen" class="screen hidden">
+            <div class="background-campagnolo">
+                <div class="sky">
+                    <div class="animated-element sole">
+                        <div class="sun-rays"></div>
+                    </div>
+                    <div class="cloud-container">
+                        <div class="animated-element nuvola nuvola1"></div>
+                        <div class="animated-element nuvola nuvola2"></div>
+                    </div>
+                </div>
+                <div class="animated-element casa">
+                    <div class="window-right"></div>
+                </div>
+                <div class="prato-container">
+                    <div class="prato-base"></div>
+                    <div class="fiori-container">
+                        <!-- I fiori verranno generati via CSS -->
+                    </div>
+                </div>
+            </div>
+            <div class="final-score">
+                <h2 style="font-size: 2em;">Ottimo lavoro!</h2>
+                <p id="final-score" style="font-size: 1.5em;"></p>
+                <button id="back-to-menu" class="animated-button">Gioca ancora!</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

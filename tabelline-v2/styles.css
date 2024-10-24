@@ -1,0 +1,408 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.screen {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.screen:not(.hidden) {
+    display: block;
+}
+
+/* Stili per la schermata di benvenuto */
+.welcome-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    z-index: 10;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 80%;
+    max-width: 500px;
+}
+
+.welcome-content h1 {
+    color: #2c3e50;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.welcome-content p {
+    color: #34495e;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.game-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #87CEEB 0%, #b4e2fa 70%, #90EE90 70%);
+    overflow: hidden;
+}
+
+/* Sole migliorato con raggi animati */
+.animated-element.sole {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 80px;
+    height: 80px;
+    background: #FFD700;
+    border-radius: 50%;
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
+    animation: floatSun 4s ease-in-out infinite;
+    z-index: 1;
+}
+
+.sun-rays {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotateSun 20s linear infinite;
+}
+
+.sun-rays::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    right: -30%;
+    bottom: -30%;
+    background: radial-gradient(circle, transparent 50%, rgba(255, 215, 0, 0.3) 60%);
+    animation: pulseSun 2s ease-in-out infinite;
+}
+
+@keyframes floatSun {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes rotateSun {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulseSun {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Nuvole migliorate */
+.cloud-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.animated-element.nuvola {
+    position: absolute;
+    background: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.nuvola::before,
+.nuvola::after {
+    content: '';
+    position: absolute;
+    background: #ffffff;
+    border-radius: 50%;
+}
+
+.nuvola1 {
+    width: 100px;
+    height: 40px;
+    top: 60px;
+    animation: moveCloud 15s linear infinite;
+}
+
+.nuvola2 {
+    width: 120px;
+    height: 45px;
+    top: 120px;
+    animation: moveCloud 20s linear infinite;
+}
+
+.nuvola3 {
+    width: 80px;
+    height: 35px;
+    top: 180px;
+    animation: moveCloud 17s linear infinite;
+}
+
+.nuvola::before {
+    width: 50%;
+    height: 100%;
+    top: -50%;
+    left: 25%;
+}
+
+.nuvola::after {
+    width: 30%;
+    height: 60%;
+    top: -30%;
+    left: 10%;
+}
+
+@keyframes moveCloud {
+    0% { transform: translateX(-200px); }
+    100% { transform: translateX(calc(100vw + 200px)); }
+}
+
+/* Area di gioco */
+.campo-verde {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Casa */
+.animated-element.casa {
+    position: absolute;
+    bottom: 15%;
+    left: 25%;
+    width: 300px;
+    height: 200px;
+    background: #8B4513;
+    border: 2px solid #5D3A1A;
+    z-index: 3;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
+
+.animated-element.casa::before {
+    content: '';
+    position: absolute;
+    top: -120px;
+    left: 40px;
+    width: 220px;
+    height: 120px;
+    background: #D2691E;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.animated-element.casa::after {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    border: 2px solid #5D3A1A;
+}
+
+.animated-element.casa .window-right {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    border: 2px solid #5D3A1A;
+}
+
+/* Prato e fiori migliorati */
+.prato-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    z-index: 2;
+}
+
+.prato-base {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #90EE90, #228B22);
+}
+
+.fiori-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+}
+
+.fiori-container::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at center, #FF69B4 0%, #FF69B4 30%, transparent 30%),
+        radial-gradient(circle at center, #FFD700 0%, #FFD700 30%, transparent 30%),
+        radial-gradient(circle at center, #FF4500 0%, #FF4500 30%, transparent 30%);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px, 30px 0;
+    animation: swayFlowers 3s ease-in-out infinite;
+    transform-origin: bottom;
+}
+
+@keyframes swayFlowers {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(2deg); }
+}
+
+/* Elementi del gioco */
+.timer-container {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #333;
+}
+
+.timer {
+    font-weight: bold;
+    color: #ff6b6b;
+}
+
+.progress-bar {
+    width: 90%;
+    height: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4CAF50;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+.answer-options {
+    margin: 20px 0;
+}
+
+.answer-option {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 25px;
+    background-color: #ffecb3;
+    border: 2px solid #ffa000;
+    cursor: pointer;
+    border-radius: 10px;
+    user-select: none;
+    transition: all 0.3s ease;
+    font-size: 1.2em;
+    min-width: 100px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.answer-option:hover {
+    background-color: #ffca28;
+    transform: scale(1.05);
+}
+
+.answer-option.selected {
+    transform: scale(0.95);
+}
+
+.target-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px dashed #000;
+    min-height: 100px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.feedback-message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.feedback-correct {
+    background-color: #d4edda;
+    color: #155724;
+    animation: pulse 0.5s ease-in-out;
+}
+
+.feedback-wrong {
+    background-color: #f8d7da;
+    color: #721c24;
+    animation: shake 0.5s ease-in-out;
+}
+
+.final-score {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    z-index: 11;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.animated-button {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.animated-button:hover {
+    transform: scale(1.05);
+    background-color: #45a049;
+    box-shadow: 0 6px 8px rgba(0,0,0,0.2);
+}
+
+.animated-button:active {
+    transform: scale(0.95);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.hidden {
+    display: none !important;
+}
