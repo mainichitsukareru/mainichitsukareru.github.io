@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traduzione Federata AI</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #3498db;
+      --accent-color: #16a085;
+      --light-gray: #f5f5f5;
+      --dark-gray: #34495e;
+      --text-color: #333;
+      --white: #fff;
+      --red: #e74c3c;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --radius: 8px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .header {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    
+    .language-banner {
+      background-color: var(--secondary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 0.8rem;
+      box-shadow: var(--shadow);
+    }
+    
+    .language-flow {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 0.5rem 1.5rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+    }
+    
+    .source-language, .target-language {
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      border-radius: 8px;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    
+    .language-flow i {
+      font-size: 1.3rem;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .grid-row {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      align-items: stretch;
+    }
+    
+    .grid-row:first-of-type .card {
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(52, 152, 219, 0.3);
+    }
+    
+    .grid-row:first-of-type .card-header {
+      background-color: var(--secondary-color);
+      padding: 1.2rem;
+    }
+    
+    .grid-row:first-of-type .card-header h2 {
+      font-size: 1.4rem;
+    }
+    
+    .grid-row:first-of-type .card-content {
+      padding: 2rem;
+      font-size: 1.05rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid-row {
+        flex-direction: column;
+      }
+    }
+    
+    .card {
+      flex: 1;
+      background-color: var(--white);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: visible;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--dark-gray);
+      color: var(--white);
+      padding: 1rem;
+      border-top-left-radius: var(--radius);
+      border-top-right-radius: var(--radius);
+    }
+
+    .card-header h2 {
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-header .icon {
+      font-size: 1.3rem;
+    }
+    
+    .card-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      width: 100%;
+      overflow: visible;
+      height: auto;
+      min-height: auto;
+      max-height: none;
+    }
+
+    .card-content p {
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+    
+    .copy-btn {
+      background-color: var(--secondary-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .copy-btn:hover {
+      background-color: #2980b9;
+    }
+
+    .copy-btn:active {
+      transform: translateY(1px);
+    }
+
+    .suggestion-block {
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border-left: 3px solid var(--secondary-color);
+      background-color: rgba(52, 152, 219, 0.1);
+      border-radius: 4px;
+    }
+
+    .footer {
+      background-color: var(--primary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* Styling for verification blocks */
+    .verification-block {
+      background-color: #f8f9fa;
+      border-radius: var(--radius);
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--secondary-color);
+    }
+
+    .verification-block strong {
+      color: var(--accent-color);
+    }
+
+    /* Tooltip for copied text */
+    .tooltip {
+      position: absolute;
+      background-color: #333;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      top: -30px;
+      right: 10px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .tooltip.show {
+      opacity: 1;
+    }
+
+    .original-style {
+      font-style: italic;
+      color: #555;
+    }
+    
+    /* Enfasi speciale per il box della traduzione */
+    .grid-row:first-of-type .card:nth-child(2) {
+      box-shadow: 0 10px 20px rgba(52, 152, 219, 0.25);
+      border: 1px solid rgba(52, 152, 219, 0.5);
+      transform: translateY(-3px);
+    }
+    
+    .grid-row:first-of-type .card:nth-child(2) .card-header {
+      background-color: #2980b9;
+      background-image: linear-gradient(135deg, #3498db, #2c3e50);
+    }
+    
+    .grid-row:first-of-type .card:nth-child(2) .card-content {
+      background-color: #fafeff;
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1><i class="fas fa-language"></i> Traduzione Federata AI</h1>
+  </header>
+  
+  <div class="language-banner">
+    <div class="language-flow">
+      <span class="source-language">Italiano</span>
+      <i class="fas fa-arrow-right"></i>
+      <span class="target-language">Sloveno</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Prima riga: Testo originale e Traduzione -->
+    <div class="grid-row">
+      <!-- Testo originale -->
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fas fa-file-alt icon"></i> Testo Originale</h2>
+        </div>
+        <div class="card-content" id="original-text">
+          <p id="original-content" class="original-style">Apple’s Find My network, leveraging over a billion active Apple devices, is the world’s largest device-locating network. We investigate the potential misuse of this network to maliciously track Bluetooth devices. We present nRootTag, a novel attack method that transforms computers into trackable “AirTags” without requiring root privileges. The attack achieves a success rate of over 90% within minutes at a cost of only a few US dollars. Or, a rainbow table can be built to search keys instantly. Subsequently, it can locate a computer in minutes, posing a substantial risk to user privacy and safety. The attack is effective on Linux, Windows, and Android systems, and can be employed to track desktops, laptops, smartphones, and IoT devices. Our comprehensive evaluation demonstrates nRootTag’s effectiveness and efficiency across various scenarios.</p>
+        </div>
+      </div>
+
+      <!-- Traduzione -->
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fas fa-globe icon"></i> Testo Tradotto</h2>
+          <button class="copy-btn" id="copy-translation" title="Copia traduzione">
+            <i class="fas fa-copy"></i> Copia
+          </button>
+          <div class="tooltip" id="copy-tooltip">Copiato!</div>
+        </div>
+        <div class="card-content" id="translated-text">
+          <p id="translation-content">Applejevo omrežje Find My, ki izkorišča več kot milijardo aktivnih naprav Apple, je največje omrežje za iskanje naprav na svetu. Raziskujemo potencialno zlorabo tega omrežja za zlonamerno sledenje Bluetooth napravam. Predstavljamo nRootTag, novo metodo napada, ki računalnike spremeni v sledljive "AirTags" brez potrebe po administratorskih pravicah. Napad je več kot 90% uspešen v le nekaj minutah in stane le nekaj ameriških dolarjev. Ali pa se lahko ustvari mavrična tabela za takojšnje iskanje ključev. Posledično lahko računalnik locira v nekaj minutah, kar predstavlja znatno tveganje za zasebnost in varnost uporabnikov. Napad je učinkovit na sistemih Linux, Windows in Android ter se lahko uporablja za sledenje namiznim računalnikom, prenosnikom, pametnim telefonom in IoT napravami. Naša celostna evalvacija prikazuje učinkovitost in uspešnost nRootTaga v različnih scenarijih.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seconda riga: Suggerimenti e Decisioni -->
+    <div class="grid-row">
+      <!-- Suggerimenti -->
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fas fa-lightbulb icon"></i> Suggerimenti Gestiti</h2>
+        </div>
+        <div class="card-content" id="suggestions">
+          <p id="suggestions-content">&lt;VERIFICA INDIPENDENTE 1&gt;**Correttezza:** OK
+
+**Errori_grammaticali:** Non sono stati riscontrati errori grammaticali significativi nella traduzione.
+
+**Miglioramenti:** La traduzione è generalmente accurata e fluida, ma ci sono alcuni punti in cui potrebbe essere migliorata per suonare più naturale in sloveno:
+
+1. "Applejeva omrežja Find My" potrebbe essere meglio come "Applejevo omrežje Find My" (singolare invece di plurale).
+
+2. "nov način napada" potrebbe essere sostituito con "novo metodo napada" per suonare più naturale.
+
+3. "rainbow tabela" è un prestito diretto dall'inglese. Sebbene comprensibile, potrebbe essere meglio usare "mavrična tabela", che è il termine sloveno più comune.
+
+4. "instantno iskanje" potrebbe essere sostituito con "takojšnje iskanje" per un termine più sloveno.
+
+5. La frase "Napad doseže uspešnost nad 90% v nekaj minutah po ceni le nekaj ameriških dolarjev." potrebbe essere ristrutturata per suonare più naturale: "Napad je več kot 90% uspešen v le nekaj minutah in stane le nekaj ameriških dolarjev."
+
+6. "celovita ocena" potrebbe essere sostituito con "celostna evalvacija" per un termine più tecnico e preciso.
+
+Queste modifiche renderebbero la traduzione ancora più fluida e naturale per un lettore sloveno, pur mantenendo il significato originale del testo.&lt;/VERIFICA INDIPENDENTE 1&gt;&lt;VERIFICA INDIPENDENTE 2&gt;**Correttezza:** OK
+
+**Errori_grammaticali:** Nessun errore grammaticale rilevato.
+
+**Miglioramenti:** La traduzione appare naturale e fluida per un parlante sloveno. Nessun miglioramento necessario.&lt;/VERIFICA INDIPENDENTE 2&gt;</p>
+        </div>
+      </div>
+
+      <!-- Decisioni AI -->
+      <div class="card">
+        <div class="card-header">
+          <h2><i class="fas fa-robot icon"></i> Esiti della Valutazione AI</h2>
+        </div>
+        <div class="card-content" id="decisions">
+          <p id="decisions-content">Ho analizzato i suggerimenti forniti e concordo con la maggior parte di essi. Le modifiche proposte rendono la traduzione più naturale e precisa in sloveno, mantenendo il significato originale. Ho incorporato le seguenti modifiche: 1) Ho cambiato 'Applejeva omrežja Find My' in 'Applejevo omrežje Find My' per usare il singolare corretto. 2) Ho sostituito 'nov način napada' con 'novo metodo napada' per una formulazione più naturale. 3) Ho cambiato 'rainbow tabela' in 'mavrična tabela', il termine sloveno più comune. 4) Ho sostituito 'instantno iskanje' con 'takojšnje iskanje' per un termine più sloveno. 5) Ho ristrutturato la frase sulla percentuale di successo dell'attacco per renderla più fluida. 6) Ho cambiato 'celovita ocena' in 'celostna evalvacija' per un termine più tecnico e preciso. Non ho adottato il suggerimento di modificare 'učinkovitost in uspešnost' poiché la formulazione originale è già corretta e naturale in sloveno.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2025 Traduzione Federata AI - Tutti i diritti riservati</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Funzione per analizzare l'HTML del documento
+      function parseHtml(htmlString) {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(htmlString, 'text/html');
+        return doc;
+      }
+
+      // Ottieni elementi dal documento corrente
+      const translationContentElement = document.getElementById('translation-content');
+      const suggestionsContentElement = document.getElementById('suggestions-content');
+      
+      // I contenuti sono già iniettati dal workflow n8n
+      // Non è necessario estrarre i dati dal documento
+      
+      // Formatta i suggerimenti sostituendo i tag di verifica con div formattati
+      let formattedSuggestions = suggestionsContentElement.innerHTML;
+      
+      // Sostituisci i tag di verifica con div formattati
+      formattedSuggestions = formattedSuggestions.replace(
+        /&lt;VERIFICA INDIPENDENTE \d+&gt;([\s\S]*?)&lt;\/VERIFICA INDIPENDENTE \d+&gt;/g, 
+        function(match, content) {
+          return '<div class="verification-block">' + content + '</div>';
+        }
+      );
+      
+      suggestionsContentElement.innerHTML = formattedSuggestions;
+      
+      // Funzionalità di copia del testo tradotto
+      const copyBtn = document.getElementById('copy-translation');
+      const copyTooltip = document.getElementById('copy-tooltip');
+      
+      copyBtn.addEventListener('click', function() {
+        const textToCopy = translationContentElement.textContent;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          // Mostra tooltip
+          copyTooltip.classList.add('show');
+          
+          // Nascondi tooltip dopo 2 secondi
+          setTimeout(() => {
+            copyTooltip.classList.remove('show');
+          }, 2000);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
