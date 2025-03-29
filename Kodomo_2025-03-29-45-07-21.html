@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Battaglia Navale a Capo Matapan</title>
+    <style>
+        /* Variabili CSS */
+        :root {
+            --primary-color: #4a6baf;
+            --secondary-color: #ff9e6d;
+            --background-color: #f9f7f2;
+            --text-color: #333333;
+            --accent-color: #8cd867;
+            --border-radius: 15px;
+            --box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Stili generali */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', 'Rounded Mplus 1c', 'Nunito', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow-x: hidden;
+        }
+
+        /* Animazioni del cielo */
+        .sky-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .sun {
+            position: absolute;
+            top: 50px;
+            right: 80px;
+            width: 80px;
+            height: 80px;
+            background: #FFD60A;
+            border-radius: 50%;
+            box-shadow: 0 0 50px #FFD60A;
+            animation: sun-glow 5s infinite alternate ease-in-out;
+        }
+
+        @keyframes sun-glow {
+            0% {
+                box-shadow: 0 0 30px #FFD60A;
+                transform: scale(1);
+            }
+            100% {
+                box-shadow: 0 0 60px #FFD60A;
+                transform: scale(1.1);
+            }
+        }
+
+        .cloud {
+            position: absolute;
+            background: white;
+            border-radius: 100px;
+            box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .cloud:after, .cloud:before {
+            content: '';
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+        }
+
+        .cloud-1 {
+            width: 100px;
+            height: 30px;
+            top: 100px;
+            left: -150px;
+            opacity: 0.9;
+            animation: cloud-move 25s linear infinite;
+        }
+
+        .cloud-1:before {
+            width: 50px;
+            height: 50px;
+            top: -20px;
+            left: 15px;
+        }
+
+        .cloud-1:after {
+            width: 40px;
+            height: 40px;
+            top: -15px;
+            left: 45px;
+        }
+
+        .cloud-2 {
+            width: 80px;
+            height: 20px;
+            top: 50px;
+            left: -120px;
+            opacity: 0.8;
+            animation: cloud-move 35s linear infinite;
+            animation-delay: 6s;
+        }
+
+        .cloud-2:before {
+            width: 35px;
+            height: 35px;
+            top: -18px;
+            left: 10px;
+        }
+
+        .cloud-2:after {
+            width: 30px;
+            height: 30px;
+            top: -15px;
+            left: 35px;
+        }
+
+        @keyframes cloud-move {
+            0% {
+                transform: translateX(-50px);
+            }
+            100% {
+                transform: translateX(calc(100vw + 200px));
+            }
+        }
+
+        /* Contenitore principale */
+        .lesson-container {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Decorazione pagina */
+        .page-decoration {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: var(--secondary-color);
+            clip-path: polygon(100% 0, 0 0, 100% 100%);
+            z-index: 1;
+        }
+
+        /* Header */
+        .lesson-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 25px;
+            position: relative;
+            text-align: center;
+            border-bottom: 5px dashed var(--secondary-color);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 5px;
+            text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+            font-weight: 700;
+        }
+
+        /* Contenuto principale */
+        .lesson-content {
+            padding: 25px;
+        }
+
+        /* Immagini */
+        .visual-connections {
+            margin: 10px 0 25px 0;
+            text-align: center;
+        }
+
+        .lesson-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .lesson-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* Introduzione */
+        .introduction {
+            background: var(--secondary-color);
+            border-radius: var(--border-radius);
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            position: relative;
+            color: white;
+        }
+
+        .introduction:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 30px;
+            border-width: 15px 15px 0;
+            border-style: solid;
+            border-color: var(--secondary-color) transparent;
+        }
+
+        /* Spiegazione principale */
+        .main-explanation {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        /* Punti chiave */
+        .key-points {
+            background: var(--accent-color);
+            color: white;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .key-points h2 {
+            margin-bottom: 15px;
+            border-bottom: 2px dashed white;
+            padding-bottom: 5px;
+        }
+
+        .key-points ul {
+            list-style: none;
+        }
+
+        .key-points li {
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+            animation: bounce-in 0.5s ease forwards;
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .key-points li:nth-child(1) { animation-delay: 0.2s; }
+        .key-points li:nth-child(2) { animation-delay: 0.4s; }
+        .key-points li:nth-child(3) { animation-delay: 0.6s; }
+        .key-points li:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes bounce-in {
+            0% {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            70% {
+                transform: translateX(5px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .key-points li:before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2rem;
+        }
+
+        /* Esempi pratici */
+        .practical-examples {
+            background: #e6f7ff;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 2px solid #a6d5fa;
+        }
+
+        .practical-examples h2 {
+            color: #0078d7;
+            margin-bottom: 15px;
+        }
+
+        /* Attività interattiva */
+        .interactive-activity {
+            background: #fff4e6;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 30px;
+            border: 2px dashed #ffaa5b;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interactive-activity:before {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, rgba(255,223,128,0.4) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%;
+            top: -25px;
+            right: -25px;
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.2;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+        }
+
+        .interactive-activity h2 {
+            color: #ff8c1a;
+            margin-bottom: 15px;
+        }
+
+        /* Stili comuni */
+        h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .sun {
+                top: 20px;
+                right: 20px;
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animazioni del cielo -->
+    <div class="sky-container">
+        <div class="sun"></div>
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+    </div>
+
+    <div class="lesson-container">
+        <div class="page-decoration"></div>
+        
+        <header class="lesson-header">
+            <h1>La Battaglia Navale a Capo Matapan</h1>
+        </header>
+        
+        <main class="lesson-content">
+            <!-- Immagini posizionate più in alto -->
+            <section class="visual-connections">
+                <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-nSDc1rFtXVp9o23fPfM73UmC/user-9f1ru8wtsZsGPMjQ5YDAA9kX/img-EUNFjB1rTOX1yW3aOoYnXL7H.png?st=2025-03-29T17%3A45%3A21Z&se=2025-03-29T19%3A45%3A21Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-03-29T00%3A31%3A37Z&ske=2025-03-30T00%3A31%3A37Z&sks=b&skv=2024-08-04&sig=I5%2B2SaKoKHPGKHkjJEvYhabqxybceB6UNl56K1YOYmQ%3D" alt="Immagine illustrativa" class="lesson-image">
+            </section>
+            
+            <!-- Introduzione -->
+            <section class="introduction">
+                <p>Immagina due squadre di navi che si sfidano in mare, come in un grande gioco! Questa è la storia di una vera battaglia avvenuta tanto tempo fa, vicino a un posto chiamato Capo Matapan.</p>
+            </section>
+            
+            <!-- Spiegazione principale -->
+            <section class="main-explanation">
+                <h2>Scopriamo insieme!</h2>
+                <p>Tanto tempo fa, c'è stata una grande battaglia nel mare. Due gruppi di navi, uno italiano e uno inglese, si sono incontrati vicino a Capo Matapan. Capo Matapan è un pezzo di terra che si allunga nel mare, come un dito! La battaglia è durata due giorni. Prima vicino a una piccola isola, poi vicino a Capo Matapan di notte. Gli inglesi hanno vinto questa battaglia perché le loro navi erano più brave a combattere di notte. La squadra italiana ha perso molte navi. Dopo questa battaglia, gli inglesi hanno avuto più controllo sul mare Mediterraneo per un po'.</p>
+            </section>
+            
+            <!-- Punti chiave -->
+            <section class="key-points">
+                <h2>Da ricordare</h2>
+                <ul>
+                    <!-- I punti chiave verranno inseriti dinamicamente -->
+                </ul>
+            </section>
+            
+            <!-- Esempi pratici -->
+            <section class="practical-examples">
+                <h2>Proviamo a capire meglio</h2>
+                <p>Pensa a due squadre di soldatini che giocano a battaglia navale nella vasca da bagno. Una squadra è più brava a nascondersi e a sparare al buio, proprio come le navi inglesi! Immagina di essere su una di quelle navi, con il mare tutto intorno e le altre navi che sparano. Che paura!</p>
+            </section>
+            
+            <!-- Attività interattiva -->
+            <section class="interactive-activity">
+                <h2>Facciamo qualcosa insieme!</h2>
+                <p>Disegna una nave da guerra con tanti cannoni. Poi disegna il mare intorno alla nave. Immagina che sia la tua nave che combatte nella battaglia di Capo Matapan!</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
