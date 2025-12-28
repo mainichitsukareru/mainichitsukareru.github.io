@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Il Grande Gatsby in 5 minuti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="book-container">
+        <!-- Splash page -->
+        <div class="page splash active" data-page="0">
+            <div class="splash-content">
+                <h1 class="title"></h1>
+                <p class="subtitle"></p>
+                <p class="intro"></p>
+                <p class="hint"></p>
+            </div>
+        </div>
+
+        <!-- Content pages (dynamically populated) -->
+        <div class="pages-container"></div>
+    </div>
+
+    <!-- Page indicator -->
+    <div class="page-indicator">
+        <span class="current">0</span> / <span class="total">16</span>
+    </div>
+
+    <!-- Navigation arrows (desktop) -->
+    <button class="nav-arrow prev" aria-label="Pagina precedente">&#8249;</button>
+    <button class="nav-arrow next" aria-label="Pagina successiva">&#8250;</button>
+
+    <!-- Spoiler modal -->
+    <div class="spoiler-modal hidden">
+        <div class="modal-content">
+            <p>Sei sicuro? Il finale verra svelato.</p>
+            <button class="confirm-reveal">Rivela</button>
+            <button class="cancel-reveal">Annulla</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
