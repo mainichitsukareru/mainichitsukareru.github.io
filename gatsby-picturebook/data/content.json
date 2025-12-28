@@ -2,8 +2,8 @@
   "splash": {
     "title": "Il Grande Gatsby",
     "subtitle": "in 5 minuti",
-    "intro": "Dal 1 gennaio 2021, The Great Gatsby è entrato nel pubblico dominio negli Stati Uniti. In Italia, le opere di F. Scott Fitzgerald (morto nel 1940) sono libere dal 2011. Questa esperienza trasforma 50.000 parole in un viaggio visivo di 5 minuti.",
-    "hint": "Scorri per iniziare"
+    "intro": "Dal 1 gennaio 2021, The Great Gatsby è entrato nel pubblico dominio negli Stati Uniti. In Italia, le opere di F. Scott Fitzgerald (morto nel 1940) sono libere dal 2011. Questa esperienza trasforma 50.000 parole in un breve viaggio visivo di 5 minuti.",
+    "hint": "Usa le frecce ai lati per iniziare"
   },
   "pages": [
     {
@@ -82,7 +82,7 @@
       "id": 10,
       "type": "image",
       "title": "James Gatz",
-      "text": "Ma chi è davvero Jay Gatsby? Nato James Gatz nel North Dakota, figlio di contadini poveri. A diciassette anni, in una maglia verde strappata, vide uno yacht magnifico sul Lake Superior. Remò fino alla barca per avvertire il proprietario di una tempesta in arrivo. In quel momento, James Gatz cesso di esistere. Jay Gatsby, figlio dei propri sogni, era nato. Un uomo che crede di poter ripetere il passato.",
+      "text": "Ma chi è davvero Jay Gatsby? Nato James Gatz nel North Dakota, figlio di contadini poveri. A diciassette anni, in una maglia verde strappata, vide uno yacht magnifico sul Lake Superior. Remò fino alla barca per avvertire il proprietario di una tempesta in arrivo. In quel momento, James Gatz cessò di esistere. Jay Gatsby, figlio dei propri sogni, era nato. Un uomo che crede di poter ripetere il passato.",
       "image": "images/page_10.png",
       "spoiler": false
     },
@@ -90,7 +90,7 @@
       "id": 11,
       "type": "image",
       "title": "Il Confronto",
-      "text": "In una suite soffocante del Plaza Hotel, nel giorno piu caldo dell'estate, la verità esplode. Tom Buchanan, marito di Daisy, affronta Gatsby. Lo accusa di essere un contrabbandiere, un criminale. Gatsby chiede a Daisy di dire che non ha mai amato Tom. Ma Daisy esita. Le parole che Gatsby ha atteso cinque anni non arrivano. Il sogno, così fragile, comincia a sgretolarsi nella calura opprimente.",
+      "text": "In una suite soffocante del Plaza Hotel, nel giorno più caldo dell'estate, la verità esplode. Tom Buchanan, marito di Daisy, affronta Gatsby. Lo accusa di essere un contrabbandiere, un criminale. Gatsby chiede a Daisy di dire che non ha mai amato Tom. Ma Daisy esita. Le parole che Gatsby ha atteso cinque anni non arrivano. Il sogno, così fragile, comincia a sgretolarsi nella calura opprimente.",
       "image": "images/page_11.png",
       "spoiler": false
     },
