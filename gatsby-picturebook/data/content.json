@@ -3,15 +3,15 @@
     "title": "Il Grande Gatsby",
     "subtitle": "in 5 minuti",
     "intro": "Dal 1 gennaio 2021, The Great Gatsby è entrato nel pubblico dominio negli Stati Uniti. In Italia, le opere di F. Scott Fitzgerald (morto nel 1940) sono libere dal 2011. Questa esperienza trasforma 50.000 parole in un breve viaggio visivo di 5 minuti.",
-    "hint": "Usa le frecce ai lati per iniziare"
+    "hint": "Usa le frecce ai lati per scorrere le pagine"
   },
   "pages": [
     {
       "id": 1,
       "type": "image",
       "title": "Long Island, Estate 1922",
-      "text": "Nick Carraway, giovane uomo del Midwest, arriva a New York in cerca di fortuna. Si stabilisce a West Egg, Long Island, in una modesta casa accanto a una villa sontuosa e misteriosa. Due penisole gemelle si affacciano sulla baia: West Egg, dimora dei nuovi ricchi, ed East Egg, regno dell'aristocrazia ereditaria. Nick non sa ancora che quella villa appartiene a Jay Gatsby, un uomo il cui nome circola nei salotti piu esclusivi della città.",
-      "image": "images/page_01.png",
+      "text": "Nick Carraway, giovane reduce del Midwest, arriva a New York nel 1922 per lavorare nel settore finanziario. Affitta una piccola casa a West Egg, Long Island, accanto a una villa colossale. West Egg e East Egg, due penisole gemelle, si fronteggiano sulla baia: una dimora dei nuovi ricchi, l'altra dell'alta società. Nick scoprirà presto che il suo vicino misterioso si chiama Jay Gatsby.",
+      "image": "images/page_01.jpg",
       "spoiler": false
     },
     {
@@ -19,7 +19,7 @@
       "type": "image",
       "title": "La Luce Verde",
       "text": "Una notte, Nick scorge il suo misterioso vicino sul prato. Gatsby sta in piedi, solo, le braccia tese verso l'oscurita. Attraverso la baia, sulla punta del molo di East Egg, pulsa una minuscola luce verde. Nick non capisce cosa significhi quel gesto disperato, quella tensione verso qualcosa di invisibile. Ma quella luce verde diventerà il simbolo di tutto cio che Gatsby desidera e non potrà mai raggiungere.",
-      "image": "images/page_02.png",
+      "image": "images/page_02.jpg",
       "spoiler": false
     },
     {
@@ -34,16 +34,16 @@
       "id": 4,
       "type": "image",
       "title": "La Valle delle Ceneri",
-      "text": "Tra le due penisole dorate e Manhattan si stende un paesaggio desolato: la valle delle ceneri. Colline grigie di scorie industriali, uomini color cenere che si muovono nella polvere. Sopra tutto, un cartellone pubblicitario sbiadito: gli occhi giganteschi del Dottor T.J. Eckleburg, con i loro occhiali gialli, osservano impassibili. Questi occhi vedono tutto, giudicano tutto, ma non dicono nulla.",
-      "image": "images/page_04.png",
+      "text": "Tra le due penisole dorate e Manhattan si stende un paesaggio desolato: la valle delle ceneri. Colline grigie di scorie industriali, uomini color cenere che si muovono nella polvere. Sopra tutto, un cartellone pubblicitario sbiadito: gli occhi blu giganteschi del Dottor T.J. Eckleburg, dietro un paio di enormi occhiali gialli, osservano impassibili. Questi occhi vedono tutto, giudicano tutto, ma non dicono nulla.",
+      "image": "images/page_04.jpg",
       "spoiler": false
     },
     {
       "id": 5,
       "type": "image",
       "title": "La Festa di Gatsby",
-      "text": "Ogni sabato sera, la villa di Gatsby si trasforma in un regno incantato. Luci colorate tra gli alberi, un'orchestra sul palco, champagne che scorre come acqua. Centinaia di ospiti arrivano senza invito, danzano nei giardini azzurri, mormorano pettegolezzi sul loro misterioso anfitrione. Chi è Gatsby? Un principe? Un assassino? Una spia tedesca? Nessuno lo sa davvero, ma tutti bevono il suo champagne.",
-      "image": "images/page_05.png",
+      "text": "Ogni fine settimana, la villa di Gatsby si trasforma in un regno incantato. Luci colorate tra gli alberi, un'orchestra sul palco, champagne che scorre come acqua. Centinaia di ospiti arrivano senza invito, danzano nei giardini azzurri, mormorano pettegolezzi sul loro misterioso anfitrione. Chi è Gatsby? Un nipote del Kaiser? Un assassino? Una spia tedesca? Nessuno lo sa davvero, ma tutti bevono il suo champagne.",
+      "image": "images/page_05.jpg",
       "spoiler": false
     },
     {
@@ -51,23 +51,23 @@
       "type": "image",
       "title": "Verso Manhattan",
       "text": "Gatsby invita Nick a pranzo a Manhattan. Viaggiano nella sua automobile color crema, un mostro magnifico di nichel scintillante e parabrezza a labirinto che riflettono una dozzina di soli. Sul ponte di Queensboro, la città si alza davanti a loro come cumuli di zucchero bianco. In questo momento tutto sembra possibile. Persino Gatsby può esistere, senza destare meraviglia.",
-      "image": "images/page_06.png",
+      "image": "images/page_06.jpg",
       "spoiler": false
     },
     {
       "id": 7,
       "type": "image",
       "title": "La Riunione",
-      "text": "Piove a dirotto quando Daisy Buchanan, cugina di Nick, arriva per il te. Gatsby l'attende da cinque anni. L'ha amata a Louisville quando era un giovane ufficiale senza un soldo. Ha costruito la sua fortuna, comprato la villa di fronte a casa sua, organizzato feste sfarzose sperando che lei apparisse. Ora è pallido come un morto, tremante, incapace di parlare. Ma quando Nick torna, la pioggia è cessata. Gatsby risplende.",
-      "image": "images/page_07.png",
+      "text": "Piove a dirotto quando Daisy arriva. Gatsby è pallido come un morto, tremante, convinto sia un errore terribile. L'attende da cinque anni—da quella notte d'ottobre del 1917 a Louisville, quando era un giovane ufficiale senza un soldo, nascosto dietro l'uniforme militare. Si sono amati per un mese. Poi la guerra lo ha portato in Francia. Doveva tornare dopo l'armistizio, ma fu mandato a Oxford per errore. Nel giugno 1919 Daisy sposò Tom Buchanan. La notte prima delle nozze pianse ubriaca, stringendo una lettera di Gatsby. Lui è tornato quando era troppo tardi. Ha costruito tutto—la fortuna, la villa di fronte, le feste infinite—per riavere questo momento. Ora non riesce a parlare. Ma quando Nick esce e torna, mezz'ora dopo, la pioggia è cessata. Gatsby risplende.",
+      "image": "images/page_07.jpg",
       "spoiler": false
     },
     {
       "id": 8,
       "type": "image",
       "title": "Le Camicie",
-      "text": "Gatsby mostra a Daisy la sua casa, le sue ricchezze, tutto cio che ha conquistato per lei. Nella cabina armadio, prende pile di camicie e comincia a lanciarle: lino, seta, flanella, a righe, a quadri, in corallo, verde mela, lavanda, arancio pallido. Un arcobaleno di stoffa preziosa. Daisy affonda il viso in quel mare di colori e scoppia a piangere. Non ha mai visto camicie cosìi belle.",
-      "image": "images/page_08.png",
+      "text": "Gatsby mostra a Daisy la sua casa, le sue ricchezze, tutto ciò che ha conquistato per lei. Nella cabina armadio, prende pile di camicie e comincia a lanciarle: lino trasparente, seta spessa, flanella fine, a righe, con arabeschi, a quadri, in corallo, verde mela, lavanda, arancio pallido, con monogrammi blu indiano. Un arcobaleno di stoffa preziosa. Daisy china la testa in quel mare di colori e scoppia a piangere tempestosamente. 'Sono così belle,' singhiozza, con la voce soffocata nelle pieghe. 'Mi rendono triste perché non ho mai visto camicie così belle.'",
+      "image": "images/page_08.jpg",
       "spoiler": false
     },
     {
@@ -83,39 +83,39 @@
       "type": "image",
       "title": "James Gatz",
       "text": "Ma chi è davvero Jay Gatsby? Nato James Gatz nel North Dakota, figlio di contadini poveri. A diciassette anni, in una maglia verde strappata, vide uno yacht magnifico sul Lake Superior. Remò fino alla barca per avvertire il proprietario di una tempesta in arrivo. In quel momento, James Gatz cessò di esistere. Jay Gatsby, figlio dei propri sogni, era nato. Un uomo che crede di poter ripetere il passato.",
-      "image": "images/page_10.png",
+      "image": "images/page_10.jpg",
       "spoiler": false
     },
     {
       "id": 11,
       "type": "image",
       "title": "Il Confronto",
-      "text": "In una suite soffocante del Plaza Hotel, nel giorno più caldo dell'estate, la verità esplode. Tom Buchanan, marito di Daisy, affronta Gatsby. Lo accusa di essere un contrabbandiere, un criminale. Gatsby chiede a Daisy di dire che non ha mai amato Tom. Ma Daisy esita. Le parole che Gatsby ha atteso cinque anni non arrivano. Il sogno, così fragile, comincia a sgretolarsi nella calura opprimente.",
-      "image": "images/page_11.png",
+      "text": "Nella suite soffocante del Plaza Hotel, nel giorno più caldo dell'estate, la verità esplode. Tom accusa Gatsby: le sue 'farmacie' vendevano alcol di contrabbando durante il Proibizionismo, un'operazione criminale con il gangster Meyer Wolfshiem. Gatsby implora Daisy: 'Digli che non l'hai mai amato!' Lei prima cede: 'Non l'ho mai amato.' Poi crolla: 'Non posso dirlo. Non sarebbe vero. L'ho amato una volta—ma ho amato anche te.' Le parole che Gatsby ha atteso cinque anni arrivano e subito svaniscono. Nella calura, il sogno si sgretola.",
+      "image": "images/page_11.jpg",
       "spoiler": false
     },
     {
       "id": 12,
       "type": "image",
       "title": "L'Automobile Gialla",
-      "text": "Sulla via del ritorno, nel crepuscolo, l'automobile gialla di Gatsby sfreccia attraverso la valle delle ceneri. Una donna corre sulla strada, le braccia alzate verso la macchina. E' Myrtle Wilson, l'amante di Tom. Crede che sia lui al volante. L'impatto e devastante. Daisy, che sta guidando, non si ferma. Gli occhi del Dottor Eckleburg osservano dalla loro torre di cartone. La tragedia ha preso velocita.",
-      "image": "images/page_12.png",
+      "text": "Sulla via del ritorno dal Plaza, Daisy e Gatsby viaggiano insieme nell'automobile gialla. È Daisy al volante - Gatsby le ha lasciato guidare per calmare i suoi nervi. Attraversano la valle delle ceneri nel crepuscolo. Myrtle Wilson, l'amante di Tom, vede l'auto gialla che aveva notato quella mattina e corre in strada credendo che sia Tom. L'impatto è devastante. Daisy non si ferma. Gatsby, accanto a lei, vede tutto. Deciderà di prendersi la colpa per proteggere la donna che ama.",
+      "image": "images/page_12.jpg",
       "spoiler": true
     },
     {
       "id": 13,
       "type": "image",
       "title": "La Piscina",
-      "text": "E' l'ultimo giorno d'estate, ma nell'aria c'e già l'autunno. Gatsby non ha mai usato la sua piscina. Oggi decide di farlo, aspettando una telefonata che non arriverà mai. Attraversa il giardino tra gli alberi che ingialliscono, portando un materassino. George Wilson, marito di Myrtle, ha scoperto chi possiede l'automobile gialla. Poco dopo, nel silenzio del pomeriggio, si sentono due spari.",
-      "image": "images/page_13.png",
+      "text": "È l'ultimo giorno d'estate, ma nell'aria c'è già l'autunno. Gatsby non ha mai usato la sua piscina. Oggi decide di farlo, aspettando una telefonata da Daisy che non arriverà mai. George Wilson, il meccanico marito di Myrtle, impazzito dal dolore per la morte della moglie, va a casa Buchanan con una pistola. Tom, per salvarsi, gli dice che l'automobile gialla appartiene a Gatsby—una mezza verità crudele, perché era Daisy al volante. Wilson cammina per ore fino a West Egg. Gatsby scende in piscina con il materassino, tra gli alberi che ingialliscono. Nel silenzio del pomeriggio si sentono due spari: Wilson ha ucciso Gatsby, poi si è tolto la vita.",
+      "image": "images/page_13.jpg",
       "spoiler": true
     },
     {
       "id": 14,
       "type": "image",
       "title": "Il Funerale",
-      "text": "Piove il giorno del funerale. Delle centinaia che affollavano le feste di Gatsby, quasi nessuno viene a salutarlo. Nick organizza tutto da solo. Tom e Daisy sono fuggiti senza lasciare un indirizzo. I compagni d'affari non vogliono essere coinvolti. Solo il padre di Gatsby, un vecchio smarrito del Minnesota, l'uomo con gli occhiali da gufo della biblioteca, e pochi servitori accompagnano la bara nel cimitero fradicio.",
-      "image": "images/page_14.png",
+      "text": "Piove il giorno del funerale. Delle centinaia che affollavano le feste di Gatsby, quasi nessuno viene a salutarlo. Nick organizza tutto da solo. Tom e Daisy sono fuggiti senza lasciare un indirizzo. I compagni d'affari non vogliono essere coinvolti. Solo il padre di Gatsby, un vecchio smarrito arrivato dal Minnesota, l'uomo con gli occhiali da gufo della biblioteca, un ministro luterano, il postino di West Egg e pochi servitori accompagnano la bara nel cimitero sotto la pioggia battente.",
+      "image": "images/page_14.jpg",
       "spoiler": false
     },
     {
